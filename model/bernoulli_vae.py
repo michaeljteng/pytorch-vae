@@ -36,8 +36,7 @@ class BernoulliVAE(VAE):
         x = self.proc_data(x)
         h = self.encoder(x)
         mu, _std = self.enc_mu(h), self.enc_sig(h)
-        import pdb; pdb.set_trace()
-        return Normal(mu, nn.functional.softplus(_std))  # torch.exp(.5 * _std)
+        return Normal(mu, nn.functional.softplus(_std)), None  # torch.exp(.5 * _std)
 
     def decode(self, z):
         x = self.decoder(z)
