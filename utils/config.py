@@ -9,7 +9,7 @@ parser.add_argument('--eval', action='store_true')
 parser.add_argument('--figs', action='store_true')
 parser.add_argument('--resume', action='store_true')
 parser.add_argument('--to_gsheets', action='store_true')
-parser.add_argument('--arch', type=str, default='bernoulli', choices=['bernoulli', 'vanilla', 'faithful']) # TODO: make conv work
+parser.add_argument('--arch', type=str, default='bernoulli', choices=['bernoulli', 'vanilla', 'faithful', 'inverted']) # TODO: make conv work
 
 parser.add_argument('--dataset_dir', type=str, default='')
 parser.add_argument('--dataset', type=str, default='stochmnist',

@@ -8,6 +8,7 @@ from data_loader.data_loader import data_loaders
 from model.bernoulli_vae import BernoulliVAE
 from model.vanilla_vae import VanillaVae
 from model.faithful_vae import FaithfulVae
+from model.inverted import InvertedVae
 from model.conv_vae import ConvVAE
 from utils.config import get_args
 from utils.draw_figs import draw_figs
@@ -30,6 +31,8 @@ elif args.arch == 'faithful':
     model_class = FaithfulVae
 elif args.arch == 'bernoulli':
     model_class = BernoulliVAE
+elif args.arch == 'inverted':
+    model_class = InvertedVae
 
 mean_img = train_loader.dataset.get_mean_img()
 model = model_class(device=device, img_shape=args.img_shape, h_dim=args.h_dim, z_dim=args.z_dim,
