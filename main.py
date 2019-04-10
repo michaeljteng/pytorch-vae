@@ -76,11 +76,12 @@ if args.eval:
             draw_figs(model, args, test_loader, 0)
     sys.exit()
 
+if args.resume == True:
+    model.load_state_dict(torch.load(args.best_model_file))
+    print('model continueing to train')
+
 for epoch in range(1, args.epochs+1):
     writer.add_scalar('learning_rate', optimizer.param_groups[0]['lr'], epoch)
-    if args.resume == True:
-        model.load_state_dict(torch.load(args.best_model_file))
-        print('model continueing to train')
     train(epoch)
     with torch.no_grad():
         if args.figs and epoch % 100 == 1:
