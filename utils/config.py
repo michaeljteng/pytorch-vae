@@ -7,6 +7,7 @@ parser.add_argument('--seed', type=int, default=42)
 parser.add_argument('--log_interval', type=int, default=500)
 parser.add_argument('--eval', action='store_true')
 parser.add_argument('--figs', action='store_true')
+parser.add_argument('--resume', action='store_true')
 parser.add_argument('--to_gsheets', action='store_true')
 parser.add_argument('--arch', type=str, default='bernoulli', choices=['bernoulli', 'vanilla', 'faithful']) # TODO: make conv work
 
